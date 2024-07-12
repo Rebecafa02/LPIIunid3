@@ -1,11 +1,15 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class ListaFuncionarios {
+    final static String caminhoArquivo = "lista-func.txt";
     final static Collection<Funcionario> quadroFuncionarios = new ArrayList<Funcionario>();
     final static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         int op;
         do{
@@ -21,7 +25,23 @@ public class ListaFuncionarios {
             }
 
         } while (op != 4);
+        escreverArquivo();
+    }
+    public static void escreverArquivo(){
+        try{
+            FileWriter fluxoEscrita = new FileWriter(caminhoArquivo);
+            Iterator<Funcionario> it = quadroFuncionarios.iterator();
 
+            while (it.hasNext()){
+                Funcionario f = it.next();
+                fluxoEscrita.write(f.getNome() + " " + f.getMatricula()
+                        + " " + f.getSalario() + "\n");
+            }
+            System.out.println("Arquivo gravado");
+            fluxoEscrita.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
     public static void menu(){
         System.out.println("------- OPERAÇÕES --------");
