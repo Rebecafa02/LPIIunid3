@@ -43,7 +43,8 @@ public class ListaFuncionarios2 {
                 try {
                     String linha = scannerFluxoArquivo.nextLine(); //String a ser quebrada para virar o objeto
 
-                    StringTokenizer tokenizer = new StringTokenizer(linha, "|"); //primeiro parametro é a string e o segundo é o demilitador
+                    StringTokenizer tokenizer = new StringTokenizer(linha, "|");
+                    //primeiro parametro é a string e o segundo é o demilitador
 
                     String nome = tokenizer.nextToken();
                     int matricula = Integer.parseInt(tokenizer.nextToken());
