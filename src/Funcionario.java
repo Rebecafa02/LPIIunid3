@@ -1,4 +1,7 @@
-public class Funcionario {
+import java.io.Serializable;
+
+public class Funcionario implements Serializable {
+    //Serializable indica se a classe está apta para ser gravada em um fluxo
     private String nome;
     private int matricula;
     private double salario;
@@ -42,4 +45,5 @@ public class Funcionario {
     public String toString(){
         return "Nome: " + nome + ", Matricula: " + matricula + ", Salario: " + salario;
     }
+
 }

@@ -28,8 +28,8 @@ public class ListaFuncionarios3 {
     }
 
     public static void lerArquivo(){
-        FileInputStream fluxoLeitura = null;
-        ObjectInputStream fluxoLeituraObjetos = null;
+        FileInputStream fluxoLeitura = null; //primeiro cria o fluxo de arquivo
+        ObjectInputStream fluxoLeituraObjetos = null; //depois cria o fluxo de leitura de objeto
 
         try{
             fluxoLeitura = new FileInputStream(caminhoArquivo); //primeiro cria o fluxo de leitura
@@ -52,8 +52,8 @@ public class ListaFuncionarios3 {
         }
 
     public static void escreverArquivo(){
-        FileOutputStream fluxoEscrita;
-        ObjectOutputStream fluxoEscritaObjetos;
+        FileOutputStream fluxoEscrita; //primeiro o fluxo do arquivo
+        ObjectOutputStream fluxoEscritaObjetos; //depois o fluxo do objeto
         try{
             fluxoEscrita = new FileOutputStream(caminhoArquivo);
             fluxoEscritaObjetos = new ObjectOutputStream(fluxoEscrita);
