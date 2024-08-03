@@ -5,6 +5,8 @@ import java.io.IOException;
 
 public class LeituraBinariaNumeros {
     public static void main(String[] args) {
+
+
         try {
             FileInputStream fluxoArquivos = new FileInputStream("numeros.bin");
             DataInputStream fluxoDados = new DataInputStream(fluxoArquivos);
